@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D56D4F41CD9413300D4D002 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F31CD9413300D4D002 /* Firebase.framework */; };
+		9D56D4F61CD9415400D4D002 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F51CD9415400D4D002 /* Security.framework */; };
+		9D56D4F81CD9415D00D4D002 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F71CD9415D00D4D002 /* CFNetwork.framework */; };
+		9D56D4FA1CD9416F00D4D002 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F91CD9416F00D4D002 /* SystemConfiguration.framework */; };
+		9D56D4FC1CD9418800D4D002 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4FB1CD9418800D4D002 /* libc++.tbd */; };
+		9D56D4FE1CD9419C00D4D002 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4FD1CD9419C00D4D002 /* libicucore.tbd */; };
 		9DD640951CD93EE70098657E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD640941CD93EE70098657E /* AppDelegate.swift */; };
 		9DD640971CD93EE70098657E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD640961CD93EE70098657E /* ViewController.swift */; };
 		9DD6409A1CD93EE70098657E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD640981CD93EE70098657E /* Main.storyboard */; };
@@ -15,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D56D4F31CD9413300D4D002 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		9D56D4F51CD9415400D4D002 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9D56D4F71CD9415D00D4D002 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9D56D4F91CD9416F00D4D002 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9D56D4FB1CD9418800D4D002 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9D56D4FD1CD9419C00D4D002 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		9DD640911CD93EE70098657E /* Gael Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gael Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD640941CD93EE70098657E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD640961CD93EE70098657E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +41,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D56D4FE1CD9419C00D4D002 /* libicucore.tbd in Frameworks */,
+				9D56D4FC1CD9418800D4D002 /* libc++.tbd in Frameworks */,
+				9D56D4FA1CD9416F00D4D002 /* SystemConfiguration.framework in Frameworks */,
+				9D56D4F81CD9415D00D4D002 /* CFNetwork.framework in Frameworks */,
+				9D56D4F61CD9415400D4D002 /* Security.framework in Frameworks */,
+				9D56D4F41CD9413300D4D002 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +56,14 @@
 		9DD640881CD93EE70098657E = {
 			isa = PBXGroup;
 			children = (
+				9D56D4FD1CD9419C00D4D002 /* libicucore.tbd */,
+				9D56D4FB1CD9418800D4D002 /* libc++.tbd */,
+				9D56D4F91CD9416F00D4D002 /* SystemConfiguration.framework */,
+				9D56D4F71CD9415D00D4D002 /* CFNetwork.framework */,
+				9D56D4F51CD9415400D4D002 /* Security.framework */,
 				9DD640931CD93EE70098657E /* Gael Events */,
 				9DD640921CD93EE70098657E /* Products */,
+				9D56D4F31CD9413300D4D002 /* Firebase.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +276,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Gael Events/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.stmarys-ca.gaeltech.Gael-Events";
@@ -263,6 +291,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Gael Events/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.stmarys-ca.gaeltech.Gael-Events";
@@ -289,6 +321,7 @@
 				9DD640A51CD93EE80098657E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
