@@ -47,7 +47,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.005907915035" blue="0.049843625000000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ADMIN" id="O93-bf-Hpg"/>
+                    <navigationItem key="navigationItem" title="ADMIN" id="O93-bf-Hpg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="dIT-hU-hTF">
+                            <connections>
+                                <segue destination="bqg-ya-6rj" kind="modal" id="yof-yS-VNw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="Oej-SZ-ZPz" id="ydA-8d-sSO"/>
                         <outlet property="passwordTextField" destination="wWb-wW-e1K" id="Ak7-Da-wHG"/>
@@ -62,17 +68,26 @@
         <scene sceneID="lmr-Av-n9C">
             <objects>
                 <tableViewController id="ltv-fL-nhr" customClass="MainViewController" customModule="Gael_Events" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQP-Cg-4hZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQP-Cg-4hZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Nob-Yg-x3x">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="xLS-Re-Ycc" rowHeight="57" style="IBUITableViewCellStyleDefault" id="Nob-Yg-x3x">
+                                <rect key="frame" x="0.0" y="28" width="320" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nob-Yg-x3x" id="0jI-uw-iqV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" id="xLS-Re-Ycc">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="56"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -112,18 +127,40 @@
                         <sections>
                             <tableViewSection id="tG6-cz-eyx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KuE-wB-4eI">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="349" id="KuE-wB-4eI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KuE-wB-4eI" id="dXX-go-7fu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="348"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of Event " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-b0-W4N">
                                                     <rect key="frame" x="8" y="5" width="304" height="30"/>
+                                                    <color key="backgroundColor" red="0.8777873773" green="0.89777552650000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-Vg-VC9">
+                                                    <rect key="frame" x="8" y="43" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-UF-XQC">
+                                                    <rect key="frame" x="8" y="86" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sponsoring " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crS-DC-wjc">
+                                                    <rect key="frame" x="8" y="124" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-AO-lAO">
+                                                    <rect key="frame" x="8" y="181" width="304" height="148"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -138,13 +175,13 @@
                     <navigationItem key="navigationItem" title="Create New Event" id="cYp-BP-cRi">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5Pg-OU-aGt">
                             <connections>
-                                <action selector="done:" destination="b1z-UB-xCJ" id="4dg-t2-whe"/>
-                                <segue destination="oyk-Z5-T5G" kind="modal" identifier="finishAddingMessage" id="HIU-or-wrk"/>
+                                <action selector="done:" destination="b1z-UB-xCJ" id="CNG-3f-FiI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="postTextField" destination="9dC-b0-W4N" id="AJ2-9e-OhN"/>
+                        <segue destination="ltv-fL-nhr" kind="push" identifier="finishAddingMessage" id="WEx-la-q7p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQ6-s4-Z9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +272,13 @@
                             <outlet property="delegate" destination="0kL-FR-lzo" id="aya-bw-oSf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="EVENTS" id="gdN-GI-zjT"/>
+                    <navigationItem key="navigationItem" title="EVENTS" id="gdN-GI-zjT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="mW1-wg-fux">
+                            <connections>
+                                <segue destination="bqg-ya-6rj" kind="modal" id="UCQ-vP-ZPK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzW-ED-UpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,6 +345,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QZH-tB-23u"/>
-        <segue reference="HIU-or-wrk"/>
+        <segue reference="WEx-la-q7p"/>
+        <segue reference="yof-yS-VNw"/>
     </inferredMetricsTieBreakers>
 </document>

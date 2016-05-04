@@ -22,22 +22,7 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        if ref.authData != nil {
-            
-            print("there is a user already signed in")
-            self.performSegueWithIdentifier("loginAndSignUpComplete", sender: self)
-            
-        } else {
-            
-            print("you will have to login or sign up")
-    }
-        
+        // Dispose of any resources that can be recreated. 
 }
     
     @IBAction func login(sender: AnyObject) {
@@ -76,7 +61,7 @@ class ViewController: UIViewController {
                 
                 if error != nil {
                     
-                    var myError = error as! NSError
+                    let myError = error
                     print(myError)
                     
                 } else {
@@ -89,7 +74,7 @@ class ViewController: UIViewController {
                             print(error)
                             print("there is an error with your given information")
                         } else{
-                            var userId = authData.uid
+                            // var userId = authData.uid
                             
                             let newUser = [
                             "provider": authData.provider,
