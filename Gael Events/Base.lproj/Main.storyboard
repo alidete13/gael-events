@@ -51,30 +51,105 @@
                     <connections>
                         <outlet property="emailTextField" destination="Oej-SZ-ZPz" id="ydA-8d-sSO"/>
                         <outlet property="passwordTextField" destination="wWb-wW-e1K" id="Ak7-Da-wHG"/>
-                        <segue destination="0hc-qh-6p0" kind="modal" identifier="loginAndSignUpComplete" id="bh5-ih-GZp"/>
+                        <segue destination="oyk-Z5-T5G" kind="modal" identifier="loginAndSignUpComplete" id="i9I-6g-s8D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="288"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="d9U-he-NfH">
+        <!--    Events Page-->
+        <scene sceneID="lmr-Av-n9C">
             <objects>
-                <viewController id="0hc-qh-6p0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Ir-ee-AvO"/>
-                        <viewControllerLayoutGuide type="bottom" id="leI-PF-ixC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IJ8-mp-lcZ">
+                <tableViewController id="ltv-fL-nhr" customClass="MainViewController" customModule="Gael_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQP-Cg-4hZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rR1-XY-tsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Nob-Yg-x3x">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nob-Yg-x3x" id="0jI-uw-iqV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ltv-fL-nhr" id="wxM-ON-2tQ"/>
+                            <outlet property="delegate" destination="ltv-fL-nhr" id="gYF-90-HJK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="    Events Page" id="dde-Zt-b4l">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="1hf-iz-wRY">
+                            <connections>
+                                <action selector="logout:" destination="ltv-fL-nhr" id="MuM-vx-4lo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="Suv-nZ-UvY">
+                            <connections>
+                                <segue destination="b1z-UB-xCJ" kind="push" id="Lop-ob-MaQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="tzl-cn-0MC" kind="modal" identifier="logoutSegue" id="QZH-tB-23u"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJh-Yp-0je" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="288"/>
+            <point key="canvasLocation" x="1844" y="280"/>
+        </scene>
+        <!--Create New Event-->
+        <scene sceneID="sGH-aI-o5N">
+            <objects>
+                <tableViewController id="b1z-UB-xCJ" customClass="AddTableViewController" customModule="Gael_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yeS-5W-NcL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="tG6-cz-eyx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KuE-wB-4eI">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KuE-wB-4eI" id="dXX-go-7fu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of Event " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-b0-W4N">
+                                                    <rect key="frame" x="8" y="5" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="b1z-UB-xCJ" id="L2G-RR-fiR"/>
+                            <outlet property="delegate" destination="b1z-UB-xCJ" id="964-GD-S54"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Create New Event" id="cYp-BP-cRi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5Pg-OU-aGt">
+                            <connections>
+                                <action selector="done:" destination="b1z-UB-xCJ" id="4dg-t2-whe"/>
+                                <segue destination="oyk-Z5-T5G" kind="modal" identifier="finishAddingMessage" id="HIU-or-wrk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postTextField" destination="9dC-b0-W4N" id="AJ2-9e-OhN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ6-s4-Z9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2261" y="280"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkx-wg-df8">
@@ -203,8 +278,30 @@
             </objects>
             <point key="canvasLocation" x="600" y="-446"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lwd-gc-f16">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oyk-Z5-T5G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hg1-aS-D1K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ltv-fL-nhr" kind="relationship" relationship="rootViewController" id="OVs-Rg-hQ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8uh-Um-AlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="280"/>
+        </scene>
     </scenes>
     <resources>
         <image name="PYWRVWMGLNFMISH.20131212114016" width="400" height="322"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QZH-tB-23u"/>
+        <segue reference="HIU-or-wrk"/>
+    </inferredMetricsTieBreakers>
 </document>

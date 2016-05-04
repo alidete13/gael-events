@@ -26,6 +26,20 @@ class ViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        if ref.authData != nil {
+            
+            print("there is a user already signed in")
+            self.performSegueWithIdentifier("loginAndSignUpComplete", sender: self)
+            
+        } else {
+            
+            print("you will have to login or sign up")
+    }
+        
+}
+    
     @IBAction func login(sender: AnyObject) {
         
         if emailTextField.text == "" || passwordTextField.text == "" {
@@ -43,6 +57,9 @@ class ViewController: UIViewController {
                 } else {
                     
                     print("login success")
+                    self.performSegueWithIdentifier("loginAndSignUpComplete",sender: self)
+                    
+                    
                 }
             })
         }
@@ -86,6 +103,8 @@ class ViewController: UIViewController {
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
                             self.ref.childByAppendingPath("users/\(authData.uid)/post").setValue(fakePost)
+                            
+                            self.performSegueWithIdentifier("loginAndSignUpComplete",sender: self)
                         
                         }
                     })

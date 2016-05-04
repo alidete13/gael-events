@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D34803A1CD9ED5200428FF6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3480391CD9ED5200428FF6 /* MainViewController.swift */; };
+		9D34803C1CDA02F100428FF6 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34803B1CDA02F100428FF6 /* AddTableViewController.swift */; };
 		9D56D4F41CD9413300D4D002 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F31CD9413300D4D002 /* Firebase.framework */; };
 		9D56D4F61CD9415400D4D002 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F51CD9415400D4D002 /* Security.framework */; };
 		9D56D4F81CD9415D00D4D002 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F71CD9415D00D4D002 /* CFNetwork.framework */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D3480391CD9ED5200428FF6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9D34803B1CDA02F100428FF6 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		9D56D4F31CD9413300D4D002 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		9D56D4F51CD9415400D4D002 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9D56D4F71CD9415D00D4D002 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -81,6 +85,8 @@
 				9DD640941CD93EE70098657E /* AppDelegate.swift */,
 				9DD640961CD93EE70098657E /* ViewController.swift */,
 				9DD640981CD93EE70098657E /* Main.storyboard */,
+				9D34803B1CDA02F100428FF6 /* AddTableViewController.swift */,
+				9D3480391CD9ED5200428FF6 /* MainViewController.swift */,
 				9DD6409B1CD93EE80098657E /* Assets.xcassets */,
 				9DD6409D1CD93EE80098657E /* LaunchScreen.storyboard */,
 				9DD640A01CD93EE80098657E /* Info.plist */,
@@ -160,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D34803A1CD9ED5200428FF6 /* MainViewController.swift in Sources */,
 				9DD640971CD93EE70098657E /* ViewController.swift in Sources */,
 				9DD640951CD93EE70098657E /* AppDelegate.swift in Sources */,
+				9D34803C1CDA02F100428FF6 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
