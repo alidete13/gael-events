@@ -76,10 +76,16 @@ class ViewController: UIViewController {
                             
                             let newUser = [
                             "provider": authData.provider,
-                            "email": authData.providerData["email"] as? NSString as? String
+                            "email": authData.providerData["email"] as? NSString as? String,
+                            ]
+                            
+                            let fakePost = [
+                            
+                                "\(NSData())": "this is my first post"
                             ]
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+                            self.ref.childByAppendingPath("users/\(authData.uid)/post").setValue(fakePost)
                         
                         }
                     })
