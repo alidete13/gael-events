@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
 
+    }
+    
+    @IBAction func login(sender: AnyObject) {
+    }
+    
+    @IBAction func signUp(sender: AnyObject) {
     }
 
 
