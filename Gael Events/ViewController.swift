@@ -11,8 +11,9 @@ import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var ref = Firebase(url: "https://smcevents.firebaseio.com/")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,65 @@ class ViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
+        
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            
+            print("make sure to fill in all text fields")
+            
+        } else {
+            
+            ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                
+                if error != nil {
+                    
+                    print(error)
+                    print("there is an error with the given information")
+                } else {
+                    
+                    print("login success")
+                }
+            })
+        }
     }
     
     @IBAction func signUp(sender: AnyObject) {
+        
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            print("make sure to enter in each textfield")
+            
+        } else {
+            
+            ref.createUser(emailTextField.text, password: passwordTextField.text, withValueCompletionBlock: { (error, result) -> Void in
+                
+                if error != nil {
+                    
+                    var myError = error as! NSError
+                    print(myError)
+                    
+                } else {
+                    
+                    print("success sign up!")
+                    
+                    self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                        
+                        if error != nil {
+                            print(error)
+                            print("there is an error with your given information")
+                        } else{
+                            var userId = authData.uid
+                            
+                            let newUser = [
+                            "provider": authData.provider,
+                            "email": authData.providerData["email"] as? NSString as? String
+                            ]
+                            
+                            self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+                        
+                        }
+                    })
+                }
+            })
+        }
     }
 
 
