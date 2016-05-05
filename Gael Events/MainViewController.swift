@@ -28,7 +28,7 @@ class MainViewController: UITableViewController {
         
         var keys: Array = Array(self.posts.keys)
         cell.textLabel?.text = posts[keys[indexPath.row]] as String!
-        
+        print("Index Path \(indexPath.row)")
         
         return cell
 
@@ -57,6 +57,24 @@ class MainViewController: UITableViewController {
         
         ref.unauth()
         self.performSegueWithIdentifier("logoutSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if((sender!.isKindOfClass(UITableViewCell))) {
+            let row = (self.tableView.indexPathForSelectedRow?.row)!
+            let eventPage = segue.destinationViewController as? EventInfoPage
+            
+            var keys: Array = Array(self.posts.keys)
+            //        var data = posts[keys[row]]
+            
+            print(posts)
+            eventPage?.whatVar = posts[keys[row]]!
+            eventPage?.whenVar = "05/11/2016"
+            eventPage?.whereVar = "Saint Mary's College of CA"
+            eventPage?.whoVar = "All Students!"
+            eventPage?.descriptionVar = "Here is where you can type out the description of your event. You can include the date, location, and a brief description. So much fun!"
+}
+
     }
 
 }

@@ -21,6 +21,7 @@
 		9DD6409A1CD93EE70098657E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD640981CD93EE70098657E /* Main.storyboard */; };
 		9DD6409C1CD93EE80098657E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD6409B1CD93EE80098657E /* Assets.xcassets */; };
 		9DD6409F1CD93EE80098657E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD6409D1CD93EE80098657E /* LaunchScreen.storyboard */; };
+		D117E2A41CDAB18C00F66BE1 /* EventInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D117E2A31CDAB18B00F66BE1 /* EventInfoPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9DD6409B1CD93EE80098657E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD6409E1CD93EE80098657E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD640A01CD93EE80098657E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D117E2A31CDAB18B00F66BE1 /* EventInfoPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				9DD6409B1CD93EE80098657E /* Assets.xcassets */,
 				9DD6409D1CD93EE80098657E /* LaunchScreen.storyboard */,
 				9DD640A01CD93EE80098657E /* Info.plist */,
+				D117E2A31CDAB18B00F66BE1 /* EventInfoPage.swift */,
 			);
 			path = "Gael Events";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				9D34803A1CD9ED5200428FF6 /* MainViewController.swift in Sources */,
 				9DD640971CD93EE70098657E /* ViewController.swift in Sources */,
 				9DD640951CD93EE70098657E /* AppDelegate.swift in Sources */,
+				D117E2A41CDAB18C00F66BE1 /* EventInfoPage.swift in Sources */,
 				9DC629F81CDA9AAF006DFA50 /* EventsTableViewController.swift in Sources */,
 				9D34803C1CDA02F100428FF6 /* AddTableViewController.swift in Sources */,
 			);
