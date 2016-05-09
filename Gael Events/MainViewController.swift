@@ -9,12 +9,17 @@
 import UIKit
 import Firebase
 
+let DESCRIPTION_KEY = "descritption"
+let LOCATION_KEY = "location"
+let SPONSOR_KEY = "sponsor"
+let TITLE_KEY = "title"
+
 class MainViewController: UITableViewController {
     
-    var posts: [String: String] = [String: String]()
+   // var posts: [String: String] = [String: String]()
+    var posts: NSMutableArray = []
     
-    
-    var ref = Firebase(url:"https://smcevents.firebaseio.com/")
+    var ref = Firebase(url:"https://smcevents.firebaseio.com/posts")
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -26,9 +31,11 @@ class MainViewController: UITableViewController {
         
         let cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        var keys: Array = Array(self.posts.keys)
-        cell.textLabel?.text = posts[keys[indexPath.row]] as String!
-        print("Index Path \(indexPath.row)")
+        let cellPost = posts[indexPath.row]
+        
+        let title: String = cellPost[TITLE_KEY] as! String
+
+        cell.textLabel?.text = title
         
         return cell
 
@@ -37,17 +44,23 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.observeEventType(.Value, withBlock: { snapshot in
+        
+        
+        
+        ref.queryOrderedByKey().observeEventType(.ChildAdded, withBlock: { snapshot in
             
-            let snapshotPosts = snapshot.value.objectForKey("posts")
             
-            if let snapshotPosts = snapshotPosts {
-                self.posts = snapshotPosts as! [String: String]
-            } else {
-                self.posts = [:]
-            }
-
-            print(self.posts)
+            //print(snapshot.value.objectForKey("title"))
+            //print(snapshot.value.objectForKey("location"))
+            
+            let title = snapshot.value["title"] as! String
+            let location = snapshot.value["location"] as! String
+            
+            
+            let temp: [String: String] = [DESCRIPTION_KEY: "123", LOCATION_KEY: location, SPONSOR_KEY: "a sponsor", TITLE_KEY: title]
+            
+            self.posts.addObject(temp)
+            
             self.tableView.reloadData()
 
         })
@@ -62,17 +75,21 @@ class MainViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if((sender!.isKindOfClass(UITableViewCell))) {
             let row = (self.tableView.indexPathForSelectedRow?.row)!
-            let eventPage = segue.destinationViewController as? EventInfoPage
+            let eventPage = segue.destinationViewController as! EventInfoPage
             
-            var keys: Array = Array(self.posts.keys)
-            //        var data = posts[keys[row]]
+            let post = self.posts[row]
             
-            print(posts)
-            eventPage?.whatVar = posts[keys[row]]!
-            eventPage?.whenVar = "05/11/2016"
-            eventPage?.whereVar = "Saint Mary's College of CA"
-            eventPage?.whoVar = "All Students!"
-            eventPage?.descriptionVar = "Here is where you can type out the description of your event. You can include the date, location, and a brief description. So much fun!"
+            let description = post[DESCRIPTION_KEY] as! String
+            let location = post[LOCATION_KEY] as! String
+            let title = post[TITLE_KEY] as! String
+            let sponsor = post[SPONSOR_KEY] as! String
+            
+            eventPage.descriptionVar = description
+
+            eventPage.whatVar = title
+            eventPage.whenVar = "05/11/2016"
+            eventPage.whereVar = location
+            eventPage.whoVar = sponsor
 }
 
     }

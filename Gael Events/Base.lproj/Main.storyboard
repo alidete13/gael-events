@@ -129,42 +129,49 @@
                         <sections>
                             <tableViewSection id="tG6-cz-eyx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="349" id="KuE-wB-4eI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="570" id="KuE-wB-4eI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KuE-wB-4eI" id="dXX-go-7fu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="348"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of Event " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-b0-W4N">
-                                                    <rect key="frame" x="8" y="5" width="304" height="30"/>
+                                                    <rect key="frame" x="4" y="17" width="312" height="30"/>
                                                     <color key="backgroundColor" red="0.8777873773" green="0.89777552650000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-Vg-VC9">
-                                                    <rect key="frame" x="8" y="43" width="304" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-UF-XQC">
-                                                    <rect key="frame" x="8" y="86" width="304" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sponsoring " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crS-DC-wjc">
-                                                    <rect key="frame" x="8" y="124" width="304" height="30"/>
+                                                    <rect key="frame" x="4" y="74" width="312" height="30"/>
+                                                    <color key="backgroundColor" red="0.48336572490000002" green="0.74376515560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-AO-lAO">
-                                                    <rect key="frame" x="8" y="181" width="304" height="148"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-uJ-Plr">
+                                                    <rect key="frame" x="4" y="183" width="312" height="77"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="484390773.30756402">
+                                                        <!--2016-05-08 08:59:33 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-UF-XQC">
+                                                    <rect key="frame" x="4" y="128" width="312" height="30"/>
+                                                    <color key="backgroundColor" red="0.48336572490000002" green="0.74376515560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Description  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hma-HT-cmg">
+                                                    <rect key="frame" x="4" y="282" width="312" height="135"/>
+                                                    <color key="backgroundColor" red="0.48336572490000002" green="0.74376515560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="312" id="Y9u-98-pCm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.005907915035" blue="0.049843625000000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -182,13 +189,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cripTextField" destination="hma-HT-cmg" id="xyq-49-2Re"/>
                         <outlet property="postTextField" destination="9dC-b0-W4N" id="AJ2-9e-OhN"/>
+                        <outlet property="sponTextField" destination="crS-DC-wjc" id="xku-9D-CA2"/>
+                        <outlet property="whereTextField" destination="7Jf-UF-XQC" id="yn4-rD-oBw"/>
                         <segue destination="ltv-fL-nhr" kind="push" identifier="finishAddingMessage" id="WEx-la-q7p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQ6-s4-Z9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="280"/>
+            <point key="canvasLocation" x="2456" y="272"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkx-wg-df8">
@@ -516,9 +526,9 @@
         <image name="SMCIcon" width="400" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WEx-la-q7p"/>
+        <segue reference="yof-yS-VNw"/>
         <segue reference="QZH-tB-23u"/>
-        <segue reference="KuC-6V-3kz"/>
-        <segue reference="UCQ-vP-ZPK"/>
+        <segue reference="WEx-la-q7p"/>
+        <segue reference="x5i-IE-tvz"/>
     </inferredMetricsTieBreakers>
 </document>
