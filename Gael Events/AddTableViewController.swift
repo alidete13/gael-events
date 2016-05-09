@@ -22,6 +22,8 @@ class AddTableViewController: UITableViewController {
     
     @IBOutlet weak var cripTextField: UITextView!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
  
     @IBAction func done(sender: AnyObject) {
         
@@ -29,14 +31,17 @@ class AddTableViewController: UITableViewController {
         let sponsor = sponTextField.text
         let location = whereTextField.text
         let description = cripTextField.text
+        let date = datePicker.date
         
-        let users: NSDictionary = ["title": postTitle!, "sponsor": sponsor!, "location": location!,"descritption": description!]
+        let dateAsString = date.description
         
-        ref.childByAppendingPath("posts").childByAutoId().setValue(users)
+        let newPost: NSDictionary = [TITLE_KEY: postTitle!, SPONSOR_KEY: sponsor!, LOCATION_KEY: location!, DESCRIPTION_KEY: description!, WHEN_KEY: dateAsString]
+        
+        ref.childByAppendingPath("posts").childByAutoId().setValue(newPost)
         
 
 
-    ref.childByAppendingPath("users/\(ref.authData.uid)/post").childByAutoId().setValue(postTextField.text)
+        ref.childByAppendingPath("users/\(ref.authData.uid)/post").childByAutoId().setValue(postTextField.text)
         
         
             
