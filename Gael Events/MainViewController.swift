@@ -15,10 +15,16 @@ let SPONSOR_KEY = "sponsor"
 let TITLE_KEY = "title"
 let WHEN_KEY = "when"
 
+func alphabetizeByDate(post1: [String: String], post2: [String: String]) -> Bool {
+    let date1 = post1[WHEN_KEY]!
+    let date2 = post2[WHEN_KEY]!
+    return date1.compare(date2) == NSComparisonResult.OrderedAscending ? true : false
+}
+
 class MainViewController: UITableViewController {
     
-   // var posts: [String: String] = [String: String]()
-    var posts: NSMutableArray = []
+    var posts: [[String: String]] = []
+    // var posts: NSMutableArray = []
     
     var ref = Firebase(url:"https://smcevents.firebaseio.com/posts")
     
@@ -34,7 +40,7 @@ class MainViewController: UITableViewController {
         
         let cellPost = posts[indexPath.row]
         
-        let title: String = cellPost[TITLE_KEY] as! String
+        let title: String = cellPost[TITLE_KEY]!
 
         cell.textLabel?.text = title
         
@@ -63,7 +69,11 @@ class MainViewController: UITableViewController {
             
             let temp: [String: String] = [DESCRIPTION_KEY: description, LOCATION_KEY: location, SPONSOR_KEY: sponsor, TITLE_KEY: title, WHEN_KEY: when]
             
-            self.posts.addObject(temp)
+            self.posts.append(temp)
+            
+            // Need to keep the posts sorted by date
+            
+            self.posts = self.posts.sort(alphabetizeByDate)
             
             self.tableView.reloadData()
 
@@ -83,11 +93,11 @@ class MainViewController: UITableViewController {
             
             let post = self.posts[row]
             
-            let description = post[DESCRIPTION_KEY] as! String
-            let location = post[LOCATION_KEY] as! String
-            let title = post[TITLE_KEY] as! String
-            let sponsor = post[SPONSOR_KEY] as! String
-            let when = post[WHEN_KEY] as! String
+            let description = post[DESCRIPTION_KEY]!
+            let location = post[LOCATION_KEY]!
+            let title = post[TITLE_KEY]!
+            let sponsor = post[SPONSOR_KEY]!
+            let when = post[WHEN_KEY]!
             
             eventPage.descriptionVar = description
 

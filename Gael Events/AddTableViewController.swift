@@ -33,7 +33,7 @@ class AddTableViewController: UITableViewController {
         let description = cripTextField.text
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy, HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd at HH:mm"
         let dateAsString = dateFormatter.stringFromDate(datePicker.date)
         
         let newPost: NSDictionary = [TITLE_KEY: postTitle!, SPONSOR_KEY: sponsor!, LOCATION_KEY: location!, DESCRIPTION_KEY: description!, WHEN_KEY: dateAsString]
