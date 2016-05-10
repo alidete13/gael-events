@@ -15,7 +15,6 @@
 		9D56D4FA1CD9416F00D4D002 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4F91CD9416F00D4D002 /* SystemConfiguration.framework */; };
 		9D56D4FC1CD9418800D4D002 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4FB1CD9418800D4D002 /* libc++.tbd */; };
 		9D56D4FE1CD9419C00D4D002 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D56D4FD1CD9419C00D4D002 /* libicucore.tbd */; };
-		9DC629F81CDA9AAF006DFA50 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC629F71CDA9AAF006DFA50 /* EventsTableViewController.swift */; };
 		9DD640951CD93EE70098657E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD640941CD93EE70098657E /* AppDelegate.swift */; };
 		9DD640971CD93EE70098657E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD640961CD93EE70098657E /* ViewController.swift */; };
 		9DD6409A1CD93EE70098657E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD640981CD93EE70098657E /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 		9D56D4F91CD9416F00D4D002 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D56D4FB1CD9418800D4D002 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		9D56D4FD1CD9419C00D4D002 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		9DC629F71CDA9AAF006DFA50 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		9DD640911CD93EE70098657E /* Gael Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gael Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD640941CD93EE70098657E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD640961CD93EE70098657E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				9DD640941CD93EE70098657E /* AppDelegate.swift */,
 				9DD640961CD93EE70098657E /* ViewController.swift */,
 				9DD640981CD93EE70098657E /* Main.storyboard */,
-				9DC629F71CDA9AAF006DFA50 /* EventsTableViewController.swift */,
 				9D34803B1CDA02F100428FF6 /* AddTableViewController.swift */,
 				9D3480391CD9ED5200428FF6 /* MainViewController.swift */,
 				9DD6409B1CD93EE80098657E /* Assets.xcassets */,
@@ -176,7 +173,6 @@
 				9DD640971CD93EE70098657E /* ViewController.swift in Sources */,
 				9DD640951CD93EE70098657E /* AppDelegate.swift in Sources */,
 				D117E2A41CDAB18C00F66BE1 /* EventInfoPage.swift in Sources */,
-				9DC629F81CDA9AAF006DFA50 /* EventsTableViewController.swift in Sources */,
 				9D34803C1CDA02F100428FF6 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

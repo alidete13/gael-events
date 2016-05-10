@@ -41,8 +41,11 @@ class MainViewController: UITableViewController {
         let cellPost = posts[indexPath.row]
         
         let title: String = cellPost[TITLE_KEY]!
+        let when: String = cellPost[WHEN_KEY]!
+        
+        let titleAndDate = "\(title) || \(when)"
 
-        cell.textLabel?.text = title
+        cell.textLabel?.text = titleAndDate
         
         return cell
 
