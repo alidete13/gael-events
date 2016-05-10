@@ -31,9 +31,10 @@ class AddTableViewController: UITableViewController {
         let sponsor = sponTextField.text
         let location = whereTextField.text
         let description = cripTextField.text
-        let date = datePicker.date
         
-        let dateAsString = date.description
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy, HH:mm"
+        let dateAsString = dateFormatter.stringFromDate(datePicker.date)
         
         let newPost: NSDictionary = [TITLE_KEY: postTitle!, SPONSOR_KEY: sponsor!, LOCATION_KEY: location!, DESCRIPTION_KEY: description!, WHEN_KEY: dateAsString]
         
