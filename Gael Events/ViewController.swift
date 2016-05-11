@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     var ref = Firebase(url: "https://smcevents.firebaseio.com/")
 
     override func viewDidLoad() {

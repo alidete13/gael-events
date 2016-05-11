@@ -14,12 +14,15 @@ class EventInfoPage: UIViewController {
     var whereVar:String = ""
     var whoVar:String = ""
     var descriptionVar:String = ""
+    var Time = 10
+    var Timer = NSTimer()
 
     @IBOutlet weak var whatLabel: UILabel!
     @IBOutlet weak var whenLabel: UILabel!
     @IBOutlet weak var whereLabel: UILabel!
     @IBOutlet weak var whoLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         whatLabel?.text = whatVar
@@ -29,6 +32,32 @@ class EventInfoPage: UIViewController {
         descriptionLabel?.text = descriptionVar
         
         // Do any additional setup after loading the view.
+     
+     Timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(EventInfoPage.Notification), userInfo: nil, repeats: true)
+    
+    }
+    
+    func Notification(){
+        
+        Time -= 1
+        
+        if(Time <= 0){
+        
+        let Notification = UILocalNotification()
+        
+        Notification.alertAction = "Go Back to Event"
+        Notification.alertBody   = "Your Event is happening Soon"
+        
+        Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(Notification)
+            
+            
+            Timer.invalidate()
+            
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +65,13 @@ class EventInfoPage: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func pushNotification(sender: AnyObject) {
+        
+        let AlertView = UIAlertController(title: "Your Event" , message: "A notification has been set", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        AlertView.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(AlertView, animated: true, completion: nil)
     }
-    */
 
 }
