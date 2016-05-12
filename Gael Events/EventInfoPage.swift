@@ -21,7 +21,7 @@ class EventInfoPage: UIViewController {
     @IBOutlet weak var whenLabel: UILabel!
     @IBOutlet weak var whereLabel: UILabel!
     @IBOutlet weak var whoLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
